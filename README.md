@@ -302,6 +302,11 @@ To get started:
   
 i  Install the Data Connect VS Code Extensions. You can explore Data Connect Query on local pgLite and Cloud SQL Postgres Instance.  
 
+## Setup and Configure Data Connect
+[Configuration Reference](https://firebase.google.com/docs/data-connect/configuration-reference)  
+[Find out all about mutations](https://firebase.google.com/docs/reference/data-connect/gql/mutation)  
+[Figure out all about queries](https://firebase.google.com/docs/reference/data-connect/gql/query)  
+
 ## Add Material Design Schematic
 ```bash
 ng add @angular/material
