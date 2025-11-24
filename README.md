@@ -148,6 +148,12 @@ ng generate --help
 
 ## Building
 
+To install the required packages do:
+
+```base
+npm install
+```
+
 To build the project run:
 
 ```bash
