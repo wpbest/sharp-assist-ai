@@ -1,0 +1,245 @@
+import { Component, OnInit } from '@angular/core';
+import { getDataConnect } from 'firebase/data-connect';
+import { 
+  listUsers, 
+  getUser, 
+  searchUsersByName,
+  createUser,
+  updateUser,
+  deleteUser 
+} from '@dataconnect/generated';
+
+/**
+ * Example Angular Component demonstrating Firebase Data Connect CRUD operations
+ * This is a simple example showing how to use the generated SDK
+ */
+@Component({
+  selector: 'app-user-example',
+  template: `
+    <div class="user-example">
+      <h2>User Management Example</h2>
+      
+      <!-- Create User -->
+      <div class="section">
+        <h3>Create User</h3>
+        <input [(ngModel)]="newUserId" placeholder="User ID">
+        <input [(ngModel)]="newUserName" placeholder="User Name">
+        <button (click)="onCreateUser()">Create</button>
+      </div>
+
+      <!-- List Users -->
+      <div class="section">
+        <h3>All Users</h3>
+        <button (click)="onLoadUsers()">Load Users</button>
+        <ul>
+          <li *ngFor="let user of users">
+            {{ user.userId }}: {{ user.userName }}
+            <button (click)="onUpdateUser(user.userId)">Update</button>
+            <button (click)="onDeleteUser(user.userId)">Delete</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search Users -->
+      <div class="section">
+        <h3>Search Users</h3>
+        <input [(ngModel)]="searchTerm" placeholder="Search by name">
+        <button (click)="onSearchUsers()">Search</button>
+      </div>
+
+      <!-- Get Single User -->
+      <div class="section">
+        <h3>Get User by ID</h3>
+        <input [(ngModel)]="getUserId" placeholder="User ID">
+        <button (click)="onGetUser()">Get User</button>
+        <div *ngIf="selectedUser">
+          {{ selectedUser.userId }}: {{ selectedUser.userName }}
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .user-example {
+      padding: 20px;
+    }
+    .section {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f5f5f5;
+      border-radius: 3px;
+    }
+  `]
+})
+export class UserExampleComponent implements OnInit {
+  users: any[] = [];
+  selectedUser: any = null;
+  
+  // Form fields
+  newUserId = '';
+  newUserName = '';
+  searchTerm = '';
+  getUserId = '';
+
+  ngOnInit() {
+    // Load users on component init
+    this.loadUsers();
+  }
+
+  /**
+   * Create a new user
+   */
+  async onCreateUser() {
+    if (!this.newUserId || !this.newUserName) {
+      alert('Please enter both User ID and User Name');
+      return;
+    }
+
+    try {
+      await createUser(getDataConnect(), {
+        userId: this.newUserId,
+        userName: this.newUserName
+      });
+      
+      console.log('User created successfully');
+      this.newUserId = '';
+      this.newUserName = '';
+      
+      // Reload users list
+      await this.loadUsers();
+    } catch (error) {
+      console.error('Error creating user:', error);
+      alert('Error creating user. Check console for details.');
+    }
+  }
+
+  /**
+   * Load all users
+   */
+  async loadUsers() {
+    try {
+      const result = await listUsers(getDataConnect());
+      this.users = result.data.users || [];
+      console.log('Loaded users:', this.users);
+    } catch (error) {
+      console.error('Error loading users:', error);
+      alert('Error loading users. Check console for details.');
+    }
+  }
+
+  /**
+   * Reload users (triggered by button)
+   */
+  async onLoadUsers() {
+    await this.loadUsers();
+  }
+
+  /**
+   * Get a single user by ID
+   */
+  async onGetUser() {
+    if (!this.getUserId) {
+      alert('Please enter a User ID');
+      return;
+    }
+
+    try {
+      const result = await getUser(getDataConnect(), {
+        userId: this.getUserId
+      });
+      
+      this.selectedUser = result.data.user;
+      console.log('Loaded user:', this.selectedUser);
+    } catch (error) {
+      console.error('Error getting user:', error);
+      alert('Error getting user. Check console for details.');
+    }
+  }
+
+  /**
+   * Search users by name
+   */
+  async onSearchUsers() {
+    if (!this.searchTerm) {
+      // If search term is empty, load all users
+      await this.loadUsers();
+      return;
+    }
+
+    try {
+      const result = await searchUsersByName(getDataConnect(), {
+        searchTerm: this.searchTerm
+      });
+      
+      this.users = result.data.users || [];
+      console.log('Search results:', this.users);
+    } catch (error) {
+      console.error('Error searching users:', error);
+      alert('Error searching users. Check console for details.');
+    }
+  }
+
+  /**
+   * Update a user's name
+   */
+  async onUpdateUser(userId: string) {
+    const newName = prompt('Enter new name for user ' + userId);
+    if (!newName) return;
+
+    try {
+      await updateUser(getDataConnect(), {
+        userId: userId,
+        userName: newName
+      });
+      
+      console.log('User updated successfully');
+      
+      // Reload users list
+      await this.loadUsers();
+    } catch (error) {
+      console.error('Error updating user:', error);
+      alert('Error updating user. Check console for details.');
+    }
+  }
+
+  /**
+   * Delete a user
+   */
+  async onDeleteUser(userId: string) {
+    if (!confirm('Are you sure you want to delete user ' + userId + '?')) {
+      return;
+    }
+
+    try {
+      await deleteUser(getDataConnect(), {
+        userId: userId
+      });
+      
+      console.log('User deleted successfully');
+      
+      // Reload users list
+      await this.loadUsers();
+    } catch (error) {
+      console.error('Error deleting user:', error);
+      alert('Error deleting user. Check console for details.');
+    }
+  }
+}

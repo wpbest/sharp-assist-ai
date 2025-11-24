@@ -1,0 +1,16 @@
+# Create, Update, Delete Operations for Users
+
+# Create a new user
+mutation createUser($userId: String!, $userName: String!) @auth(level: PUBLIC) {
+  user_insert(data: { userId: $userId, userName: $userName })
+}
+
+# Update an existing user's name
+mutation updateUser($userId: String!, $userName: String!) @auth(level: PUBLIC) {
+  user_update(key: { userId: $userId }, data: { userName: $userName })
+}
+
+# Delete a user (using upsert to delete by setting fields to null, or simpler approach)
+mutation deleteUser($userId: String!) @auth(level: PUBLIC) {
+  user_deleteMany(where: { userId: { eq: $userId } })
+}

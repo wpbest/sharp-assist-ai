@@ -1,42 +1,5 @@
-type User @table {
-  displayName: String!
-  email: String!
-  createdAt: Timestamp!
-  photoUrl: String
-  organization: String
-}
-
-type Template @table {
-  owner: User!
-  name: String!
-  content: String!
-  createdAt: Timestamp!
-  updatedAt: Timestamp!
-  description: String
-  isPublic: Boolean
-}
-
-type Placeholder @table {
-  template: Template!
-  name: String!
-  type: String!
-  createdAt: Timestamp!
-  defaultValue: String
-  description: String
-}
-
-type Document @table {
-  generator: User!
-  template: Template!
-  name: String!
-  generatedContent: String!
-  createdAt: Timestamp!
-  downloadUrl: String
-  tags: [String]
-}
-
-type DocumentData @table {
-  document: Document!
-  placeholderName: String!
-  value: String!
+# User Schema Definition
+type User @table(key: "userId") {
+  userId: String! @col(name: "user_id")
+  userName: String! @col(name: "user_name")
 }

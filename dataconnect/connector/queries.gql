@@ -1,0 +1,22 @@
+# Read Operations for Users
+
+# Get all users
+query listUsers @auth(level: PUBLIC) {
+  users {
+    ...UserFields
+  }
+}
+
+# Get a single user by userId
+query getUser($userId: String!) @auth(level: PUBLIC) {
+  user(key: { userId: $userId }) {
+    ...UserFields
+  }
+}
+
+# Search users by name (partial match)
+query searchUsersByName($searchTerm: String!) @auth(level: PUBLIC) {
+  users(where: { userName: { contains: $searchTerm } }) {
+    ...UserFields
+  }
+}

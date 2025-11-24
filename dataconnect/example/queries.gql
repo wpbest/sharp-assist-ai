@@ -1,7 +1,0 @@
-query ListUsers @auth(level: PUBLIC) {
-  users {
-    id
-    displayName
-    email
-  }
-}

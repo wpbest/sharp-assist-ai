@@ -1,0 +1,7 @@
+# Fragment for User fields
+# Reusable fragment to ensure consistent User field selection across queries
+
+fragment UserFields on User {
+  userId
+  userName
+}

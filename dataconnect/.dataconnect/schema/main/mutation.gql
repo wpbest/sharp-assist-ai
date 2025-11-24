@@ -1,41 +1,5 @@
 extend type Mutation {
   """
-  ✨ Insert a single `Document` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  document_insert(
-    """
-    Data object to insert into the table.
-    """
-    data: Document_Data!
-  ): Document_KeyOutput! @fdc_generated(from: "Document", purpose: INSERT_SINGLE)
-  """
-  ✨ Insert a single `DocumentData` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  documentData_insert(
-    """
-    Data object to insert into the table.
-    """
-    data: DocumentData_Data!
-  ): DocumentData_KeyOutput! @fdc_generated(from: "DocumentData", purpose: INSERT_SINGLE)
-  """
-  ✨ Insert a single `Placeholder` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  placeholder_insert(
-    """
-    Data object to insert into the table.
-    """
-    data: Placeholder_Data!
-  ): Placeholder_KeyOutput! @fdc_generated(from: "Placeholder", purpose: INSERT_SINGLE)
-  """
-  ✨ Insert a single `Template` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  template_insert(
-    """
-    Data object to insert into the table.
-    """
-    data: Template_Data!
-  ): Template_KeyOutput! @fdc_generated(from: "Template", purpose: INSERT_SINGLE)
-  """
   ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   user_insert(
@@ -44,42 +8,6 @@ extend type Mutation {
     """
     data: User_Data!
   ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
-  """
-  ✨ Insert `Document` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  document_insertMany(
-    """
-    List of data objects to insert into the table.
-    """
-    data: [Document_Data!]!
-  ): [Document_KeyOutput!]! @fdc_generated(from: "Document", purpose: INSERT_MULTIPLE)
-  """
-  ✨ Insert `DocumentData` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  documentData_insertMany(
-    """
-    List of data objects to insert into the table.
-    """
-    data: [DocumentData_Data!]!
-  ): [DocumentData_KeyOutput!]! @fdc_generated(from: "DocumentData", purpose: INSERT_MULTIPLE)
-  """
-  ✨ Insert `Placeholder` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  placeholder_insertMany(
-    """
-    List of data objects to insert into the table.
-    """
-    data: [Placeholder_Data!]!
-  ): [Placeholder_KeyOutput!]! @fdc_generated(from: "Placeholder", purpose: INSERT_MULTIPLE)
-  """
-  ✨ Insert `Template` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
-  """
-  template_insertMany(
-    """
-    List of data objects to insert into the table.
-    """
-    data: [Template_Data!]!
-  ): [Template_KeyOutput!]! @fdc_generated(from: "Template", purpose: INSERT_MULTIPLE)
   """
   ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
@@ -90,42 +18,6 @@ extend type Mutation {
     data: [User_Data!]!
   ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert or update a single `Document` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Document`.
-  """
-  document_upsert(
-    """
-    Data object to insert or update if it already exists.
-    """
-    data: Document_Data!
-  ): Document_KeyOutput! @fdc_generated(from: "Document", purpose: UPSERT_SINGLE)
-  """
-  ✨ Insert or update a single `DocumentData` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DocumentData`.
-  """
-  documentData_upsert(
-    """
-    Data object to insert or update if it already exists.
-    """
-    data: DocumentData_Data!
-  ): DocumentData_KeyOutput! @fdc_generated(from: "DocumentData", purpose: UPSERT_SINGLE)
-  """
-  ✨ Insert or update a single `Placeholder` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Placeholder`.
-  """
-  placeholder_upsert(
-    """
-    Data object to insert or update if it already exists.
-    """
-    data: Placeholder_Data!
-  ): Placeholder_KeyOutput! @fdc_generated(from: "Placeholder", purpose: UPSERT_SINGLE)
-  """
-  ✨ Insert or update a single `Template` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Template`.
-  """
-  template_upsert(
-    """
-    Data object to insert or update if it already exists.
-    """
-    data: Template_Data!
-  ): Template_KeyOutput! @fdc_generated(from: "Template", purpose: UPSERT_SINGLE)
-  """
   ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
   """
   user_upsert(
@@ -134,42 +26,6 @@ extend type Mutation {
     """
     data: User_Data!
   ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
-  """
-  ✨ Insert or update `Document` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Document`.
-  """
-  document_upsertMany(
-    """
-    List of data objects to insert or update if it already exists.
-    """
-    data: [Document_Data!]!
-  ): [Document_KeyOutput!]! @fdc_generated(from: "Document", purpose: UPSERT_MULTIPLE)
-  """
-  ✨ Insert or update `DocumentData` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DocumentData`.
-  """
-  documentData_upsertMany(
-    """
-    List of data objects to insert or update if it already exists.
-    """
-    data: [DocumentData_Data!]!
-  ): [DocumentData_KeyOutput!]! @fdc_generated(from: "DocumentData", purpose: UPSERT_MULTIPLE)
-  """
-  ✨ Insert or update `Placeholder` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Placeholder`.
-  """
-  placeholder_upsertMany(
-    """
-    List of data objects to insert or update if it already exists.
-    """
-    data: [Placeholder_Data!]!
-  ): [Placeholder_KeyOutput!]! @fdc_generated(from: "Placeholder", purpose: UPSERT_MULTIPLE)
-  """
-  ✨ Insert or update `Template` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Template`.
-  """
-  template_upsertMany(
-    """
-    List of data objects to insert or update if it already exists.
-    """
-    data: [Template_Data!]!
-  ): [Template_KeyOutput!]! @fdc_generated(from: "Template", purpose: UPSERT_MULTIPLE)
   """
   ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
   """
@@ -180,110 +36,9 @@ extend type Mutation {
     data: [User_Data!]!
   ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Update a single `Document` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Document` or `null` if not found.
-  """
-  document_update(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: Document_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: Document_FirstRow
-
-    """
-    Data object containing fields to be updated.
-    """
-    data: Document_Data!
-  ): Document_KeyOutput @fdc_generated(from: "Document", purpose: UPDATE_SINGLE)
-  """
-  ✨ Update a single `DocumentData` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `DocumentData` or `null` if not found.
-  """
-  documentData_update(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: DocumentData_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: DocumentData_FirstRow
-
-    """
-    Data object containing fields to be updated.
-    """
-    data: DocumentData_Data!
-  ): DocumentData_KeyOutput @fdc_generated(from: "DocumentData", purpose: UPDATE_SINGLE)
-  """
-  ✨ Update a single `Placeholder` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Placeholder` or `null` if not found.
-  """
-  placeholder_update(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: Placeholder_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: Placeholder_FirstRow
-
-    """
-    Data object containing fields to be updated.
-    """
-    data: Placeholder_Data!
-  ): Placeholder_KeyOutput @fdc_generated(from: "Placeholder", purpose: UPDATE_SINGLE)
-  """
-  ✨ Update a single `Template` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Template` or `null` if not found.
-  """
-  template_update(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: Template_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: Template_FirstRow
-
-    """
-    Data object containing fields to be updated.
-    """
-    data: Template_Data!
-  ): Template_KeyOutput @fdc_generated(from: "Template", purpose: UPDATE_SINGLE)
-  """
   ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
   """
   user_update(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
     """
     The key used to identify the object.
     """
@@ -299,82 +54,6 @@ extend type Mutation {
     """
     data: User_Data!
   ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
-  """
-  ✨ Update `Document` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
-  """
-  document_updateMany(
-    """
-    Filter condition to specify which rows to update.
-    """
-    where: Document_Filter
-
-    """
-    Set to true to update all rows.
-    """
-    all: Boolean = false
-
-    """
-    Data object containing fields to update.
-    """
-    data: Document_Data!
-  ): Int! @fdc_generated(from: "Document", purpose: UPDATE_MULTIPLE)
-  """
-  ✨ Update `DocumentData` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
-  """
-  documentData_updateMany(
-    """
-    Filter condition to specify which rows to update.
-    """
-    where: DocumentData_Filter
-
-    """
-    Set to true to update all rows.
-    """
-    all: Boolean = false
-
-    """
-    Data object containing fields to update.
-    """
-    data: DocumentData_Data!
-  ): Int! @fdc_generated(from: "DocumentData", purpose: UPDATE_MULTIPLE)
-  """
-  ✨ Update `Placeholder` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
-  """
-  placeholder_updateMany(
-    """
-    Filter condition to specify which rows to update.
-    """
-    where: Placeholder_Filter
-
-    """
-    Set to true to update all rows.
-    """
-    all: Boolean = false
-
-    """
-    Data object containing fields to update.
-    """
-    data: Placeholder_Data!
-  ): Int! @fdc_generated(from: "Placeholder", purpose: UPDATE_MULTIPLE)
-  """
-  ✨ Update `Template` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
-  """
-  template_updateMany(
-    """
-    Filter condition to specify which rows to update.
-    """
-    where: Template_Filter
-
-    """
-    Set to true to update all rows.
-    """
-    all: Boolean = false
-
-    """
-    Data object containing fields to update.
-    """
-    data: Template_Data!
-  ): Int! @fdc_generated(from: "Template", purpose: UPDATE_MULTIPLE)
   """
   ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
   """
@@ -395,90 +74,9 @@ extend type Mutation {
     data: User_Data!
   ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
   """
-  ✨ Delete a single `Document` based on `id`, `key` or `first` and return its key (or `null` if not found).
-  """
-  document_delete(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: Document_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: Document_FirstRow
-  ): Document_KeyOutput @fdc_generated(from: "Document", purpose: DELETE_SINGLE)
-  """
-  ✨ Delete a single `DocumentData` based on `id`, `key` or `first` and return its key (or `null` if not found).
-  """
-  documentData_delete(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: DocumentData_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: DocumentData_FirstRow
-  ): DocumentData_KeyOutput @fdc_generated(from: "DocumentData", purpose: DELETE_SINGLE)
-  """
-  ✨ Delete a single `Placeholder` based on `id`, `key` or `first` and return its key (or `null` if not found).
-  """
-  placeholder_delete(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: Placeholder_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: Placeholder_FirstRow
-  ): Placeholder_KeyOutput @fdc_generated(from: "Placeholder", purpose: DELETE_SINGLE)
-  """
-  ✨ Delete a single `Template` based on `id`, `key` or `first` and return its key (or `null` if not found).
-  """
-  template_delete(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
-    """
-    The key used to identify the object.
-    """
-    key: Template_Key
-
-    """
-    Fetch the first row based on the filters and ordering.
-    """
-    first: Template_FirstRow
-  ): Template_KeyOutput @fdc_generated(from: "Template", purpose: DELETE_SINGLE)
-  """
   ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
   """
   user_delete(
-    """
-    The unique ID of the object.
-    """
-    id: UUID
-
     """
     The key used to identify the object.
     """
@@ -489,62 +87,6 @@ extend type Mutation {
     """
     first: User_FirstRow
   ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
-  """
-  ✨ Delete `Document` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
-  """
-  document_deleteMany(
-    """
-    Filter condition to specify which rows to delete.
-    """
-    where: Document_Filter
-
-    """
-    Set to true to delete all rows.
-    """
-    all: Boolean = false
-  ): Int! @fdc_generated(from: "Document", purpose: DELETE_MULTIPLE)
-  """
-  ✨ Delete `DocumentData` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
-  """
-  documentData_deleteMany(
-    """
-    Filter condition to specify which rows to delete.
-    """
-    where: DocumentData_Filter
-
-    """
-    Set to true to delete all rows.
-    """
-    all: Boolean = false
-  ): Int! @fdc_generated(from: "DocumentData", purpose: DELETE_MULTIPLE)
-  """
-  ✨ Delete `Placeholder` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
-  """
-  placeholder_deleteMany(
-    """
-    Filter condition to specify which rows to delete.
-    """
-    where: Placeholder_Filter
-
-    """
-    Set to true to delete all rows.
-    """
-    all: Boolean = false
-  ): Int! @fdc_generated(from: "Placeholder", purpose: DELETE_MULTIPLE)
-  """
-  ✨ Delete `Template` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
-  """
-  template_deleteMany(
-    """
-    Filter condition to specify which rows to delete.
-    """
-    where: Template_Filter
-
-    """
-    Set to true to delete all rows.
-    """
-    all: Boolean = false
-  ): Int! @fdc_generated(from: "Template", purpose: DELETE_MULTIPLE)
   """
   ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
   """
