@@ -158,6 +158,149 @@ UPDATE src/app/app.config.ts (1279 bytes)
 ```bash
 firebase init
 ```
+     ######## #### ########  ######## ########     ###     ######  ########  
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##  
+     ######    ##  ########  ######   ########  #########  ######  ######  
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##  
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########  
+  
+You're about to initialize a Firebase project in this directory:  
+  
+  C:\Users\willi\OneDrive\Documents\GitHub\sharp-assist-ai  
+  
+Before we get started, keep in mind:  
+  
+  * You are initializing within an existing Firebase project directory  
+  
+✔ Are you ready to proceed? Yes  
+✔ Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to  
+confirm your choices. Data Connect: Set up a Firebase Data Connect service, Functions: Configure a Cloud Functions  
+directory and its files, Hosting: Set up deployments for static web apps, Emulators: Set up local emulators for Firebase  
+ products  
+
+=== Project Setup  
+  
+First, let's associate this project directory with a Firebase project.  
+You can create multiple project aliases by running firebase use --add,  
+  
+i  Using project sharp-assist-ai (sharp-assist-ai) .  
+  
+=== Dataconnect Setup  
+i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled...  
+i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled...  
+✔ Your project already has existing services. Which would you like to set up local files for? us-west4/sharp-assist-ai  
+!  dataconnect: CloudSQL no cost trial has already been used on this project.  
++  dataconnect: Detected existing apps . (web)  
+i  dataconnect\dataconnect.yaml is unchanged  
+i  dataconnect\schema\schema.gql is unchanged  
+✔ File dataconnect\example\connector.yaml already exists. Overwrite? Yes  
++  Wrote dataconnect\example\connector.yaml  
+i  dataconnect\example\queries.gql is unchanged  
++  Wrote dataconnect\example\connector.yaml  
+i  dataconnect: Installing the generated SDKs ...  
+I1124 05:01:56.194881   19148 codegen.go:80] [connector "example" javascriptSdk] Generating sources into "C:\\Users\\willi\\OneDrive\\Documents\\GitHub\\sharp-assist-ai\\src\\dataconnect-generated"  
+I1124 05:01:56.203322   19148 collector.go:107] connector "example" javascriptSdk wrote into "C:\\Users\\willi\\OneDrive\\Documents\\GitHub\\sharp-assist-ai\\src\\dataconnect-generated"  
+Generated sources: angular\README.md [11198B] .guides/usage.md [1517B] .guides/config.json [236B] README.md [7053B] angular\index.d.ts [671B] angular\esm\index.esm.js [645B] index.d.ts [1315B] package.json [864B] angular\package.json [653B] angular\index.cjs.js [682B] esm\package.json [17B] index.cjs.js [587B] angular\esm\package.json [17B] .guides/setup.md [1631B] esm\index.esm.js [503B]  
+I1124 05:01:56.206047   19148 installsdk.go:55] Package @dataconnect/generated is already installed. Skipping installation  
++  dataconnect: Installed generated SDKs for . (web)  
+i  Run `ng add @angular/fire` to install angular sdk dependencies.  
+Visit https://github.com/invertase/tanstack-query-firebase/tree/main/packages/angular for more information on how to set up Angular Generated SDKs for Firebase Data Connect  
+  
+=== Functions Setup  
+Let's create a new codebase for your functions.  
+A directory corresponding to the codebase will be created in your project  
+with sample code pre-configured.  
+  
+See https://firebase.google.com/docs/functions/organize-functions for  
+more information on organizing your functions using codebases.  
+  
+Functions can be deployed with firebase deploy.  
+  
+✔ What language would you like to use to write Cloud Functions? TypeScript  
+✔ Do you want to use ESLint to catch probable bugs and enforce style? No  
++  Wrote functions/package.json  
++  Wrote functions/tsconfig.json  
++  Wrote functions/src/index.ts  
++  Wrote functions/.gitignore  
+✔ Do you want to install dependencies with npm now? Yes  
+npm warn EBADENGINE Unsupported engine {  
+npm warn EBADENGINE   package: undefined,  
+npm warn EBADENGINE   required: { node: '24' },  
+npm warn EBADENGINE   current: { node: 'v20.19.5', npm: '10.8.2' }  
+npm warn EBADENGINE }  
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.  
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported  
+  
+added 523 packages, and audited 524 packages in 17s  
+  
+67 packages are looking for funding  
+  run `npm fund` for details  
+  
+found 0 vulnerabilities  
+  
+=== Hosting Setup  
+  
+Your public directory is the folder (relative to your project directory) that  
+will contain Hosting assets to be uploaded with firebase deploy. If you  
+have a build process for your assets, use your build's output directory.  
+  
+✔ What do you want to use as your public directory? dist/sharp-assist-ai/browser  
+✔ Configure as a single-page app (rewrite all urls to /index.html)? Yes  
+✔ Set up automatic builds and deploys with GitHub? Yes  
+  
+i  Detected a .git folder at C:\Users\willi\OneDrive\Documents\GitHub\sharp-assist-ai  
+i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store.  
+  
+Visit this URL on this device to log in:  
+https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=1071087570&  redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo  
+  
+Waiting for authentication...  
+  
++  Success! Logged into GitHub as wpbest  
+  
+✔ For which GitHub repository would you like to set up a GitHub workflow? (format: user/repository)  
+wpbest/sharp-assist-ai  
+  
++  Created service account github-action-1103055577 with Firebase Hosting admin permissions.  
++  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_SHARP_ASSIST_AI.  
+i  You can manage your secrets at https://github.com/wpbest/sharp-assist-ai/settings/secrets.  
+  
+✔ Set up the workflow to run a build script before every deploy? Yes  
+✔ What script should be run before every deploy? npm ci && npm run build  
+  
++  Created workflow file C:\Users\willi\OneDrive\Documents\GitHub\sharp-assist-ai\.github/workflows/firebase-hosting-pull-request.yml  
+✔ Set up automatic deployment to your site's live channel when a PR is merged? Yes  
+✔ What is the name of the GitHub branch associated with your site's live channel? main  
+  
++  Created workflow file C:\Users\willi\OneDrive\Documents\GitHub\sharp-assist-ai\.github/workflows/firebase-hosting-merge.yml  
+  
+i  Action required: Visit this URL to revoke authorization for the Firebase CLI GitHub OAuth App:  
+https://github.com/settings/connections/applications/89cf50f02ac6aaed3484  
+i  Action required: Push any new workflow file(s) to your repo  
++  Wrote dist/sharp-assist-ai/browser/index.html  
+  
+=== Emulators Setup  
+✔ Which Firebase emulators do you want to set up? Press Space to select emulators, then Enter to confirm your choices.  
+Authentication Emulator, Functions Emulator, Hosting Emulator, Data Connect Emulator  
+✔ Which port do you want to use for the auth emulator? 9099  
+✔ Which port do you want to use for the functions emulator? 5001  
+✔ Which port do you want to use for the hosting emulator? 5000  
+✔ Which port do you want to use for the dataconnect emulator? 9399  
+✔ Do you want to persist Postgres data from the Data Connect emulator between runs? Data will be saved to
+dataconnect/.dataconnect/pgliteData. You can change this directory by editing  
+'firebase.json#emulators.dataconnect.dataDir'. Yes  
+✔ Would you like to enable the Emulator UI? Yes  
+✔ Which port do you want to use for the Emulator UI (leave empty to use any available port)?  
+✔ Would you like to download the emulators now? Yes  
+  
++  Wrote configuration info to firebase.json  
++  Wrote project information to .firebaserc  
+  
++  Firebase initialization complete!  
+  
+To get started:  
+  
+i  Install the Data Connect VS Code Extensions. You can explore Data Connect Query on local pgLite and Cloud SQL Postgres Instance.  
 
 ## Add Material Design Schematic
 ```bash
