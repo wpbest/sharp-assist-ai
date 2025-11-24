@@ -1,5 +1,9 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Auto Generated
+genkit-functions
+src/dataconnect-generated
+
 # Compiled output
 /dist
 /tmp
