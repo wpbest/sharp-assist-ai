@@ -31,7 +31,7 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()),
     provideDataConnect(() =>
       getDataConnect({
-        connector: 'example',
+        connector: 'connector',
         location: 'us-west4',
         service: 'sharp-assist-ai',
       })
