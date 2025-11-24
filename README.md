@@ -311,7 +311,21 @@ i  Install the Data Connect VS Code Extensions. You can explore Data Connect Que
 ```bash
 ng add @angular/material
 ```
-
+✔ Determining Package Manager  
+  › Using package manager: npm  
+✔ Searching for compatible package version 
+  › Found compatible package version: @angular/material@19.2.19.  
+✔ Loading package information from registry  
+✔ Confirming installation  
+✔ Installing package  
+✔ Choose a prebuilt theme name, or "custom" for a custom theme: Azure/Blue [Preview:
+https://material.angular.dev?theme=azure-blue]  
+✔ Set up global Angular Material typography styles? Yes  
+UPDATE package.json (1524 bytes)  
+✔ Packages installed successfully.  
+UPDATE angular.json (3233 bytes)  
+UPDATE src/index.html (535 bytes)  
+UPDATE src/styles.scss (182 bytes)  
 
 ## Add Internationalization Localization (i18n)
 ```bash
