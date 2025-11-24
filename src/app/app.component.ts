@@ -20,6 +20,10 @@ export class AppComponent {
   ngOnInit() {
     this.insertUser('123456', 'Goran');
     this.listUsers();
+    this.updateUser('123456', 'Bane');
+    this.listUsers();
+    this.deleteUser('123456');
+    this.listUsers();
   }
 
   async insertUser(userId: string, userName: string) {
@@ -51,6 +55,39 @@ export class AppComponent {
       return result.data;
     } catch (error) {
       console.error('Error fetching users:', error);
+      throw error;
+    }
+  }
+
+  async deleteUser(userId: string) {
+    try {
+      const mutation = mutationRef(this.dataConnect, 'deleteUser', {
+        userId,
+      });
+
+      const result = await executeMutation(mutation);
+
+      console.log('User deleted successfully:', result);
+      return result.data;
+    } catch (error) {
+      console.error('Error deleting user:', error);
+      throw error;
+    }
+  }
+
+  async updateUser(userId: string, userName: string) {
+    try {
+      const mutation = mutationRef(this.dataConnect, 'updateUser', {
+        userId,
+        userName,
+      });
+
+      const result = await executeMutation(mutation);
+
+      console.log('User updated successfully:', result);
+      return result.data;
+    } catch (error) {
+      console.error('Error updating user:', error);
       throw error;
     }
   }
