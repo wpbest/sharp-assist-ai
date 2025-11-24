@@ -1,0 +1,568 @@
+extend type Document {
+  """
+  ✨ List `DocumentData` objects in a one-to-many relationship (where `DocumentData`.`document` is this object).
+  """
+  documentDatas_on_document(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DocumentData_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DocumentData_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DocumentData_Having
+  ): [DocumentData!]! @fdc_generated(from: "DocumentData.document", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Document", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Document` table.
+  """
+  _count: Int! @fdc_generated(from: "Document.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `downloadUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  downloadUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.downloadUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `generatedContent` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  generatedContent_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.generatedContent", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `generatorId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  generatorId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.generatorId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Document` table where the `templateId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  templateId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Document.templateId", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `Document` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Document.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `Document` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Document.createdAt", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Document.id", purpose: GLOBAL_ID)
+}
+extend type DocumentData {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "DocumentData", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `DocumentData` table.
+  """
+  _count: Int! @fdc_generated(from: "DocumentData.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DocumentData` table where the `documentId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  documentId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DocumentData.documentId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DocumentData` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DocumentData.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DocumentData` table where the `placeholderName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  placeholderName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DocumentData.placeholderName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `DocumentData` table where the `value` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  value_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "DocumentData.value", purpose: QUERY_COUNT)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "DocumentData.id", purpose: GLOBAL_ID)
+}
+extend type Placeholder {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Placeholder", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Placeholder` table.
+  """
+  _count: Int! @fdc_generated(from: "Placeholder.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `defaultValue` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  defaultValue_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.defaultValue", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `templateId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  templateId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.templateId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Placeholder` table where the `type` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  type_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Placeholder.type", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `Placeholder` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Placeholder.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `Placeholder` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Placeholder.createdAt", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Placeholder.id", purpose: GLOBAL_ID)
+}
+extend type Template {
+  """
+  ✨ List `Document` objects in a one-to-many relationship (where `Document`.`template` is this object).
+  """
+  documents_on_template(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Document_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Document_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Document_Having
+  ): [Document!]! @fdc_generated(from: "Document.template", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Placeholder` objects in a one-to-many relationship (where `Placeholder`.`template` is this object).
+  """
+  placeholders_on_template(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Placeholder_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Placeholder_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Placeholder_Having
+  ): [Placeholder!]! @fdc_generated(from: "Placeholder.template", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Template", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Template` table.
+  """
+  _count: Int! @fdc_generated(from: "Template.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `content` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  content_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.content", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `isPublic` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isPublic_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.isPublic", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `ownerId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  ownerId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.ownerId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Template` table where the `updatedAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  updatedAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Template.updatedAt", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `Template` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Template.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `updatedAt` field in the `Template` table.
+  """
+  updatedAt_min: Timestamp @fdc_generated(from: "Template.updatedAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `Template` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Template.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `updatedAt` field in the `Template` table.
+  """
+  updatedAt_max: Timestamp @fdc_generated(from: "Template.updatedAt", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Template.id", purpose: GLOBAL_ID)
+}
+extend type User {
+  """
+  ✨ List `Document` objects in a one-to-many relationship (where `Document`.`generator` is this object).
+  """
+  documents_on_generator(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Document_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Document_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Document_Having
+  ): [Document!]! @fdc_generated(from: "Document.generator", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Template` objects in a one-to-many relationship (where `Template`.`owner` is this object).
+  """
+  templates_on_owner(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Template_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Template_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Template_Having
+  ): [Template!]! @fdc_generated(from: "Template.owner", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `displayName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  displayName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.displayName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `organization` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  organization_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.organization", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `photoUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  photoUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.photoUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `User` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `User` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "User.id", purpose: GLOBAL_ID)
+}

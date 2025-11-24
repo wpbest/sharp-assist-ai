@@ -1,0 +1,1485 @@
+"""
+✨ `Document_KeyOutput` returns the primary key fields of table type `Document`.
+
+It has the same format as `Document_Key`, but is only used as mutation return value.
+"""
+scalar Document_KeyOutput
+"""
+✨ `DocumentData_KeyOutput` returns the primary key fields of table type `DocumentData`.
+
+It has the same format as `DocumentData_Key`, but is only used as mutation return value.
+"""
+scalar DocumentData_KeyOutput
+"""
+✨ `Placeholder_KeyOutput` returns the primary key fields of table type `Placeholder`.
+
+It has the same format as `Placeholder_Key`, but is only used as mutation return value.
+"""
+scalar Placeholder_KeyOutput
+"""
+✨ `Template_KeyOutput` returns the primary key fields of table type `Template`.
+
+It has the same format as `Template_Key`, but is only used as mutation return value.
+"""
+scalar Template_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ Generated data input type for table 'Document'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Document_Data {
+  """
+  ✨ Generated from Field `Document`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Document`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Document`.`generatorId` of type `UUID!`
+  """
+  generatorId: UUID
+  """
+  ✨ `_expr` server value variant of `generatorId` (✨ Generated from Field `Document`.`generatorId` of type `UUID!`)
+  """
+  generatorId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Document`.`templateId` of type `UUID!`
+  """
+  templateId: UUID
+  """
+  ✨ `_expr` server value variant of `templateId` (✨ Generated from Field `Document`.`templateId` of type `UUID!`)
+  """
+  templateId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Document`.`generator` of type `User!`
+  """
+  generator: User_Key
+  """
+  ✨ Generated from Field `Document`.`template` of type `Template!`
+  """
+  template: Template_Key
+  """
+  ✨ Generated from Field `Document`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Document`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Document`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Document`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Document`.`downloadUrl` of type `String`
+  """
+  downloadUrl: String
+  """
+  ✨ `_expr` server value variant of `downloadUrl` (✨ Generated from Field `Document`.`downloadUrl` of type `String`)
+  """
+  downloadUrl_expr: String_Expr
+  """
+  ✨ Generated from Field `Document`.`generatedContent` of type `String!`
+  """
+  generatedContent: String
+  """
+  ✨ `_expr` server value variant of `generatedContent` (✨ Generated from Field `Document`.`generatedContent` of type `String!`)
+  """
+  generatedContent_expr: String_Expr
+  """
+  ✨ Generated from Field `Document`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Document`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+  """
+  ✨ Generated from Field `Document`.`tags` of type `[String]`
+  """
+  tags: [String!]
+  """
+  ✨ `_update` server value variant of `tags` (✨ Generated from Field `Document`.`tags` of type `[String]`)
+  """
+  tags_update: [String_ListUpdate!]
+}
+"""
+✨ Generated filter input type for table 'Document'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Document_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Document_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Document_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Document_Filter!]
+  """
+  ✨ Generated from Field `Document`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Document`.`generatorId` of type `UUID!`
+  """
+  generatorId: UUID_Filter
+  """
+  ✨ Generated from Field `Document`.`templateId` of type `UUID!`
+  """
+  templateId: UUID_Filter
+  """
+  ✨ Generated from Field `Document`.`generator` of type `User!`
+  """
+  generator: User_Filter
+  """
+  ✨ Generated from Field `Document`.`template` of type `Template!`
+  """
+  template: Template_Filter
+  """
+  ✨ Generated from Field `Document`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Document`.`downloadUrl` of type `String`
+  """
+  downloadUrl: String_Filter
+  """
+  ✨ Generated from Field `Document`.`generatedContent` of type `String!`
+  """
+  generatedContent: String_Filter
+  """
+  ✨ Generated from Field `Document`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Document`.`tags` of type `[String]`
+  """
+  tags: String_ListFilter
+  """
+  ✨ Generated from Field `Document`.`documentDatas_on_document` of type `[DocumentData!]!`
+  """
+  documentDatas_on_document: DocumentData_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Document'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Document_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Document_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Document_Filter
+}
+"""
+✨ Generated having input type for table 'Document'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Document_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Document_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Document_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Document_Having!]
+  """
+  ✨ Generated from Field `Document`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`downloadUrl_count` of type `Int!`
+  """
+  downloadUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`generatedContent_count` of type `Int!`
+  """
+  generatedContent_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`generatorId_count` of type `Int!`
+  """
+  generatorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`templateId_count` of type `Int!`
+  """
+  templateId_count: Int_Filter
+  """
+  ✨ Generated from Field `Document`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Document`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Document'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Document_Key {
+  """
+  ✨ Generated from Field `Document`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Document`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Document'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Document_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Document_Filter
+}
+"""
+✨ Generated order input type for table 'Document'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Document_Order {
+  """
+  ✨ Generated from Field `Document`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`generatorId` of type `UUID!`
+  """
+  generatorId: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`templateId` of type `UUID!`
+  """
+  templateId: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`generator` of type `User!`
+  """
+  generator: User_Order
+  """
+  ✨ Generated from Field `Document`.`template` of type `Template!`
+  """
+  template: Template_Order
+  """
+  ✨ Generated from Field `Document`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`downloadUrl` of type `String`
+  """
+  downloadUrl: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`generatedContent` of type `String!`
+  """
+  generatedContent: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`downloadUrl_count` of type `Int!`
+  """
+  downloadUrl_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`generatedContent_count` of type `Int!`
+  """
+  generatedContent_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`generatorId_count` of type `Int!`
+  """
+  generatorId_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`templateId_count` of type `Int!`
+  """
+  templateId_count: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Document`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'DocumentData'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input DocumentData_Data {
+  """
+  ✨ Generated from Field `DocumentData`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `DocumentData`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DocumentData`.`documentId` of type `UUID!`
+  """
+  documentId: UUID
+  """
+  ✨ `_expr` server value variant of `documentId` (✨ Generated from Field `DocumentData`.`documentId` of type `UUID!`)
+  """
+  documentId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `DocumentData`.`document` of type `Document!`
+  """
+  document: Document_Key
+  """
+  ✨ Generated from Field `DocumentData`.`placeholderName` of type `String!`
+  """
+  placeholderName: String
+  """
+  ✨ `_expr` server value variant of `placeholderName` (✨ Generated from Field `DocumentData`.`placeholderName` of type `String!`)
+  """
+  placeholderName_expr: String_Expr
+  """
+  ✨ Generated from Field `DocumentData`.`value` of type `String!`
+  """
+  value: String
+  """
+  ✨ `_expr` server value variant of `value` (✨ Generated from Field `DocumentData`.`value` of type `String!`)
+  """
+  value_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'DocumentData'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input DocumentData_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [DocumentData_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: DocumentData_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [DocumentData_Filter!]
+  """
+  ✨ Generated from Field `DocumentData`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`documentId` of type `UUID!`
+  """
+  documentId: UUID_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`document` of type `Document!`
+  """
+  document: Document_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`placeholderName` of type `String!`
+  """
+  placeholderName: String_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`value` of type `String!`
+  """
+  value: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'DocumentData'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input DocumentData_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [DocumentData_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: DocumentData_Filter
+}
+"""
+✨ Generated having input type for table 'DocumentData'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input DocumentData_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [DocumentData_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: DocumentData_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [DocumentData_Having!]
+  """
+  ✨ Generated from Field `DocumentData`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`documentId_count` of type `Int!`
+  """
+  documentId_count: Int_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`placeholderName_count` of type `Int!`
+  """
+  placeholderName_count: Int_Filter
+  """
+  ✨ Generated from Field `DocumentData`.`value_count` of type `Int!`
+  """
+  value_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'DocumentData'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input DocumentData_Key {
+  """
+  ✨ Generated from Field `DocumentData`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `DocumentData`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'DocumentData'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input DocumentData_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: DocumentData_Filter
+}
+"""
+✨ Generated order input type for table 'DocumentData'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input DocumentData_Order {
+  """
+  ✨ Generated from Field `DocumentData`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`documentId` of type `UUID!`
+  """
+  documentId: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`document` of type `Document!`
+  """
+  document: Document_Order
+  """
+  ✨ Generated from Field `DocumentData`.`placeholderName` of type `String!`
+  """
+  placeholderName: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`value` of type `String!`
+  """
+  value: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`documentId_count` of type `Int!`
+  """
+  documentId_count: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`placeholderName_count` of type `Int!`
+  """
+  placeholderName_count: OrderDirection
+  """
+  ✨ Generated from Field `DocumentData`.`value_count` of type `Int!`
+  """
+  value_count: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Placeholder'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Placeholder_Data {
+  """
+  ✨ Generated from Field `Placeholder`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Placeholder`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Placeholder`.`templateId` of type `UUID!`
+  """
+  templateId: UUID
+  """
+  ✨ `_expr` server value variant of `templateId` (✨ Generated from Field `Placeholder`.`templateId` of type `UUID!`)
+  """
+  templateId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Placeholder`.`template` of type `Template!`
+  """
+  template: Template_Key
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Placeholder`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Placeholder`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Placeholder`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Placeholder`.`defaultValue` of type `String`
+  """
+  defaultValue: String
+  """
+  ✨ `_expr` server value variant of `defaultValue` (✨ Generated from Field `Placeholder`.`defaultValue` of type `String`)
+  """
+  defaultValue_expr: String_Expr
+  """
+  ✨ Generated from Field `Placeholder`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Placeholder`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Placeholder`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Placeholder`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+  """
+  ✨ Generated from Field `Placeholder`.`type` of type `String!`
+  """
+  type: String
+  """
+  ✨ `_expr` server value variant of `type` (✨ Generated from Field `Placeholder`.`type` of type `String!`)
+  """
+  type_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Placeholder'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Placeholder_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Placeholder_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Placeholder_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Placeholder_Filter!]
+  """
+  ✨ Generated from Field `Placeholder`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`templateId` of type `UUID!`
+  """
+  templateId: UUID_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`template` of type `Template!`
+  """
+  template: Template_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`defaultValue` of type `String`
+  """
+  defaultValue: String_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`type` of type `String!`
+  """
+  type: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'Placeholder'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Placeholder_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Placeholder_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Placeholder_Filter
+}
+"""
+✨ Generated having input type for table 'Placeholder'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Placeholder_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Placeholder_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Placeholder_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Placeholder_Having!]
+  """
+  ✨ Generated from Field `Placeholder`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`defaultValue_count` of type `Int!`
+  """
+  defaultValue_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`templateId_count` of type `Int!`
+  """
+  templateId_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`type_count` of type `Int!`
+  """
+  type_count: Int_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Placeholder'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Placeholder_Key {
+  """
+  ✨ Generated from Field `Placeholder`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Placeholder`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Placeholder'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Placeholder_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Placeholder_Filter
+}
+"""
+✨ Generated order input type for table 'Placeholder'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Placeholder_Order {
+  """
+  ✨ Generated from Field `Placeholder`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`templateId` of type `UUID!`
+  """
+  templateId: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`template` of type `Template!`
+  """
+  template: Template_Order
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`defaultValue` of type `String`
+  """
+  defaultValue: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`type` of type `String!`
+  """
+  type: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`defaultValue_count` of type `Int!`
+  """
+  defaultValue_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`templateId_count` of type `Int!`
+  """
+  templateId_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`type_count` of type `Int!`
+  """
+  type_count: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Placeholder`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Template'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Template_Data {
+  """
+  ✨ Generated from Field `Template`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Template`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Template`.`ownerId` of type `UUID!`
+  """
+  ownerId: UUID
+  """
+  ✨ `_expr` server value variant of `ownerId` (✨ Generated from Field `Template`.`ownerId` of type `UUID!`)
+  """
+  ownerId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Template`.`owner` of type `User!`
+  """
+  owner: User_Key
+  """
+  ✨ Generated from Field `Template`.`content` of type `String!`
+  """
+  content: String
+  """
+  ✨ `_expr` server value variant of `content` (✨ Generated from Field `Template`.`content` of type `String!`)
+  """
+  content_expr: String_Expr
+  """
+  ✨ Generated from Field `Template`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Template`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Template`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Template`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Template`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Template`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Template`.`isPublic` of type `Boolean`
+  """
+  isPublic: Boolean
+  """
+  ✨ `_expr` server value variant of `isPublic` (✨ Generated from Field `Template`.`isPublic` of type `Boolean`)
+  """
+  isPublic_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `Template`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Template`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+  """
+  ✨ Generated from Field `Template`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `updatedAt` (✨ Generated from Field `Template`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `updatedAt` (✨ Generated from Field `Template`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `updatedAt` (✨ Generated from Field `Template`.`updatedAt` of type `Timestamp!`)
+  """
+  updatedAt_update: [Timestamp_Update!]
+}
+"""
+✨ Generated filter input type for table 'Template'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Template_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Template_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Template_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Template_Filter!]
+  """
+  ✨ Generated from Field `Template`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Template`.`ownerId` of type `UUID!`
+  """
+  ownerId: UUID_Filter
+  """
+  ✨ Generated from Field `Template`.`owner` of type `User!`
+  """
+  owner: User_Filter
+  """
+  ✨ Generated from Field `Template`.`content` of type `String!`
+  """
+  content: String_Filter
+  """
+  ✨ Generated from Field `Template`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Template`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Template`.`isPublic` of type `Boolean`
+  """
+  isPublic: Boolean_Filter
+  """
+  ✨ Generated from Field `Template`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Template`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Template`.`documents_on_template` of type `[Document!]!`
+  """
+  documents_on_template: Document_ListFilter
+  """
+  ✨ Generated from Field `Template`.`placeholders_on_template` of type `[Placeholder!]!`
+  """
+  placeholders_on_template: Placeholder_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Template'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Template_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Template_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Template_Filter
+}
+"""
+✨ Generated having input type for table 'Template'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Template_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Template_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Template_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Template_Having!]
+  """
+  ✨ Generated from Field `Template`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`content_count` of type `Int!`
+  """
+  content_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`isPublic_count` of type `Int!`
+  """
+  isPublic_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`ownerId_count` of type `Int!`
+  """
+  ownerId_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Template`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Template`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Template`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Template`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'Template'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Template_Key {
+  """
+  ✨ Generated from Field `Template`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Template`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Template'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Template_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Template_Filter
+}
+"""
+✨ Generated order input type for table 'Template'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Template_Order {
+  """
+  ✨ Generated from Field `Template`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`ownerId` of type `UUID!`
+  """
+  ownerId: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`owner` of type `User!`
+  """
+  owner: User_Order
+  """
+  ✨ Generated from Field `Template`.`content` of type `String!`
+  """
+  content: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`isPublic` of type `Boolean`
+  """
+  isPublic: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`updatedAt` of type `Timestamp!`
+  """
+  updatedAt: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`content_count` of type `Int!`
+  """
+  content_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`isPublic_count` of type `Int!`
+  """
+  isPublic_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`ownerId_count` of type `Int!`
+  """
+  ownerId_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`updatedAt_min` of type `Timestamp`
+  """
+  updatedAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Template`.`updatedAt_max` of type `Timestamp`
+  """
+  updatedAt_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String
+  """
+  ✨ `_expr` server value variant of `displayName` (✨ Generated from Field `User`.`displayName` of type `String!`)
+  """
+  displayName_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String!`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`organization` of type `String`
+  """
+  organization: String
+  """
+  ✨ `_expr` server value variant of `organization` (✨ Generated from Field `User`.`organization` of type `String`)
+  """
+  organization_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String
+  """
+  ✨ `_expr` server value variant of `photoUrl` (✨ Generated from Field `User`.`photoUrl` of type `String`)
+  """
+  photoUrl_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`organization` of type `String`
+  """
+  organization: String_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String_Filter
+  """
+  ✨ Generated from Field `User`.`documents_on_generator` of type `[Document!]!`
+  """
+  documents_on_generator: Document_ListFilter
+  """
+  ✨ Generated from Field `User`.`templates_on_owner` of type `[Template!]!`
+  """
+  templates_on_owner: Template_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`organization_count` of type `Int!`
+  """
+  organization_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl_count` of type `Int!`
+  """
+  photoUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`organization` of type `String`
+  """
+  organization: OrderDirection
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: OrderDirection
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`organization_count` of type `Int!`
+  """
+  organization_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`photoUrl_count` of type `Int!`
+  """
+  photoUrl_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}
