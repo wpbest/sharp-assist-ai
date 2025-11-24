@@ -45,7 +45,7 @@ export class AppComponent {
 
   async listUsers() {
     try {
-      const query = queryRef(this.dataConnect, 'ListUsers');
+      const query = queryRef(this.dataConnect, 'listUsers');
       const result = await executeQuery(query);
       console.log('Users fetched successfully:', result.data);
       return result.data;

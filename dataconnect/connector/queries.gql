@@ -3,7 +3,8 @@
 # Get all users
 query listUsers @auth(level: PUBLIC) {
   users {
-    ...UserFields
+    userId
+    userName
   }
 }
 
